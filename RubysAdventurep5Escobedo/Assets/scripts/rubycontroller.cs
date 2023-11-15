@@ -10,7 +10,8 @@ public class rubycontroller : MonoBehaviour
     public int health { get { return currentHealth; } }
     int currentHealth;
 
-    // 8:56 damage zone
+    bool isInvincible;
+    float invinvibleTimer;
 
     Rigidbody2D rigidbody2d;
     float horizontal;
@@ -28,6 +29,15 @@ public class rubycontroller : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+        if (isInvincible)
+        {
+            invinvibleTimer -= Time.deltaTime;
+            if (invinvibleTimer < 0)
+            {
+                isInvincible = false;
+            }
+             
+        }
 
     }
     void FixedUpdate()
@@ -41,6 +51,15 @@ public class rubycontroller : MonoBehaviour
     }
    public void ChangeHealth(int amount)
     {
+        if (amount < 0)
+        {
+            if (isInvincible) 
+            {
+                return;
+            }
+            isInvincible = true;
+            invinvibleTimer = timeIvincible;
+        } 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
         
