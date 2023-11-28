@@ -271,12 +271,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 145343720}
     m_Modifications:
     - target: {fileID: 85733740582291732, guid: 478c26364503f314fa1c3494b5896414, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.69049835
+      objectReference: {fileID: 0}
+    - target: {fileID: 85733740582291732, guid: 478c26364503f314fa1c3494b5896414, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75443673
+      objectReference: {fileID: 0}
+    - target: {fileID: 85733740582291732, guid: 478c26364503f314fa1c3494b5896414, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.338051
+      value: -5.5248
       objectReference: {fileID: 0}
     - target: {fileID: 85733740582291732, guid: 478c26364503f314fa1c3494b5896414, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8712001
+      value: -0.6471
       objectReference: {fileID: 0}
     - target: {fileID: 85733740582291732, guid: 478c26364503f314fa1c3494b5896414, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26175,12 +26183,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 145343720}
     m_Modifications:
     - target: {fileID: 85733740582291732, guid: 478c26364503f314fa1c3494b5896414, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.69777733
+      objectReference: {fileID: 0}
+    - target: {fileID: 85733740582291732, guid: 478c26364503f314fa1c3494b5896414, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7398924
+      objectReference: {fileID: 0}
+    - target: {fileID: 85733740582291732, guid: 478c26364503f314fa1c3494b5896414, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.258051
+      value: -3.69
       objectReference: {fileID: 0}
     - target: {fileID: 85733740582291732, guid: 478c26364503f314fa1c3494b5896414, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7012
+      value: 4.41
       objectReference: {fileID: 0}
     - target: {fileID: 85733740582291732, guid: 478c26364503f314fa1c3494b5896414, type: 3}
       propertyPath: m_LocalPosition.z
