@@ -25,11 +25,16 @@ public class rubycontroller : MonoBehaviour
 
     Animator animator;
     Vector2 lookdirection = new Vector2(1, 0);
+
+    AudioSource audioSource;
+    public AudioClip throwSound;
+    public AudioClip hitSound;
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -62,6 +67,18 @@ public class rubycontroller : MonoBehaviour
                 {
             Launch();
                 }
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookdirection, 1.5f, LayerMask.GetMask("NPC"));
+            if(hit.collider != null)
+            {
+                NPC character = hit.collider.GetComponent<NPC>();
+                if (character  != null )
+                {
+                    character.DisplayDialog();
+                }
+            }
+        }
     }
     void FixedUpdate()
     {
@@ -83,9 +100,10 @@ public class rubycontroller : MonoBehaviour
             }
             isInvincible = true;
             invinvibleTimer = timeIvincible;
+            Playsound(hitSound);
         } 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
+    healyhbar.instance.SetValue(currentHealth/(float)maxHealth);
         
     }
     void Launch()
@@ -95,5 +113,11 @@ public class rubycontroller : MonoBehaviour
         projectile projectile = projectileObject.GetComponent<projectile>();
         projectile.Launch(lookdirection, 300);
         animator.SetTrigger("Launch");
+        Playsound(throwSound);
+    }
+
+    public void Playsound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }
